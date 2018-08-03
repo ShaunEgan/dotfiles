@@ -21,3 +21,4 @@ brew install git
 brew install fzf # used for fuzzy finding
 brew install tmux
 brew install zsh
+brew install git-cola
