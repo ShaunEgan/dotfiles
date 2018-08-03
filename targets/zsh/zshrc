@@ -1,0 +1,47 @@
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+export DOT_FILES=~/.dotfiles
+
+# Oh-my-zsh theme
+ZSH_THEME="mytheme"
+
+plugins=(git, osx, composer, docker, docker-compose, colorize)
+
+# User configuration
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export LANG=en_US.UTF-8
+
+source $ZSH/oh-my-zsh.sh
+
+# use .localrc for SUPER SECRET CRAP that you don't want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# All of our zsh files
+typeset -U config_files
+config_files=($DOT_FILES/**/*.zsh)
+
+# Load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load the rest
+for file in ${${config_files:#*/path.zsh}}
+do
+ source $file
+done
+
+unset config_files
+
+# Load nvm if it exists
+if [ -d ~/.nvm  ]
+then
+  export NVM_DIR=~/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
