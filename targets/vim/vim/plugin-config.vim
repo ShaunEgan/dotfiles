@@ -1,5 +1,9 @@
 let g:airline_powerline_fonts = 1
 
+" NERDTree
+:set mouse=a
+let g:NERDTreeMouseMode=3
+
 " tern for vim
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
