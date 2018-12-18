@@ -12,7 +12,7 @@ fi
 
 item_start "Linking"
 if [ ! -f ~/.oh-my-zsh/themes/mytheme.zsh-theme ]; then
-    ln -s ~/.dotfiles/zsh/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme &>/dev/null
+    ln -s ~/.zsh/mytheme.zsh-theme ~/.oh-my-zsh/themes/mytheme.zsh-theme &>/dev/null
     item_complete "done"
 else
     item_complete "already exists"
