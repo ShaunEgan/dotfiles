@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-# export DOT_FILES=~/.dotfiles
 
 # Oh-my-zsh theme
 ZSH_THEME="mytheme"
@@ -18,24 +17,6 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
-
-# All of our zsh files
-# typeset -U config_files
-# config_files=($DOT_FILES/**/*.zsh)
-
-# Load the path files
-# for file in ${(M)config_files:#*/path.zsh}
-# do
-#   source $file
-# done
-
-# load the rest
-# for file in ${${config_files:#*/path.zsh}}
-# do
-#  source $file
-# done
-#
-# unset config_files
 
 # Load nvm
 export NVM_DIR="$HOME/.nvm"
@@ -63,9 +44,3 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/shaun/dev/iflix/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/shaun/dev/iflix/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/shaun/dev/iflix/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/shaun/dev/iflix/node_modules/tabtab/.completions/sls.zsh
