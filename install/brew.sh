@@ -5,21 +5,32 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+function install_or_upgrade {
+  if brew ls --versions "$1" > /dev/null; then 
+    echo "Upgrading $1"
+    brew upgrade "$1"
+  else
+    echo "Installing $1"
+    brew install "$1"
+  fi
+}
+
 installing "Homebrew packages"
 
 # cli tools
-brew install wget
-brew install htop
+install_or_upgrade wget
+install_or_upgrade htop
 
 # python
-brew install python
-brew install python3
+install_or_upgrade python
+install_or_upgrade python3
 
 # development tools
-brew install cmake # used for YCM in vim
-brew install git
-brew install fzf # used for fuzzy finding
-brew install tmux
-brew install zsh
-brew install git-cola
-brew install vim # up-to-date vim
+install_or_upgrade cmake # used for YCM in vim
+install_or_upgrade git
+install_or_upgrade fzf # used for fuzzy finding
+install_or_upgrade tmux
+install_or_upgrade zsh
+install_or_upgrade git-cola
+install_or_upgrade vim # up-to-date vim
+install_or_upgrade golang

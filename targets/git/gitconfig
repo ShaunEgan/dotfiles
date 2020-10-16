@@ -4,6 +4,7 @@
 [alias]
   co = checkout
   lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  du = !git checkout development && git pull origin development && git fetch --prune
 [color]
   diff = auto
   status = auto
@@ -25,7 +26,7 @@
   untracked = red
 [core]
   excludesfile = ~/.gitignore
-  editor = vim
+  editor=vim
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [apply]
   whitespace = nowarn
