@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 # Oh-my-zsh theme
 ZSH_THEME="mytheme"
 
-plugins=(git, osx, composer, docker, docker-compose, colorize)
+plugins=(git osx composer docker docker-compose colorize)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -43,14 +43,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/shaunegan/dev/iflix/sls-wallet-events/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/shaunegan/dev/iflix/sls-wallet-events/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/shaunegan/dev/iflix/sls-wallet-events/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/shaunegan/dev/iflix/sls-wallet-events/node_modules/tabtab/.completions/sls.zsh
 
 export GOPATH=$HOME/dev/go
 export PATH=$HOME/dev/go/bin:$PATH
