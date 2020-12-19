@@ -35,3 +35,4 @@ install_or_upgrade git-cola
 install_or_upgrade vim # up-to-date vim
 install_or_upgrade golang
 install_or_upgrade gnupg
+install_or_upgrade iterm
