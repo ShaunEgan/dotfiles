@@ -5,6 +5,7 @@
   co = checkout
   lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   du = !git checkout development && git pull origin development && git fetch --prune
+	pp = pull --prune
 [color]
   diff = auto
   status = auto
