@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 # Oh-my-zsh theme
 ZSH_THEME="mytheme"
 
-plugins=(git osx composer docker docker-compose colorize)
+plugins=(git macos composer docker docker-compose colorize)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -59,3 +59,5 @@ if [ -f '/Users/shaunegan/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/U
 
 export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
