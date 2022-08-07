@@ -60,4 +60,9 @@ if [ -f '/Users/shaunegan/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/U
 export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname -m) == 'arm64' ]]
+then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+fi
