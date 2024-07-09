@@ -6,7 +6,7 @@ if test ! $(which brew); then
 fi
 
 function install_or_upgrade {
-  if brew ls --versions "$1" > /dev/null; then 
+  if brew ls --versions "$1" > /dev/null; then
     echo "Upgrading $1"
     brew upgrade "$1"
   else
@@ -35,3 +35,4 @@ install_or_upgrade git-cola
 install_or_upgrade vim # up-to-date vim
 install_or_upgrade golang
 install_or_upgrade gnupg
+install_or_upgrade sublime-merge
