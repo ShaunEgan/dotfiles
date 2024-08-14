@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Executes pushd without stdout output
 quiet_pushd () {
@@ -23,15 +23,15 @@ link_target () {
   quiet_popd
 }
 
-installing "targets"
+installing "configs"
 
-quiet_pushd targets
-targets=(*/)
+quiet_pushd configs
+configs=(*/)
 
-for target in "${targets[@]}"
+for config in "${configs[@]}"
 do
-  item_start $(basename ${target})
-  link_target $target
+  item_start $(basename ${config})
+  link_target $config
   item_complete "Linked"
 done
 

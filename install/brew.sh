@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if test ! $(which brew); then
   installing "Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/shaunegan/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 function install_or_upgrade {
@@ -17,6 +19,9 @@ function install_or_upgrade {
 
 installing "Homebrew packages"
 
+# Fonts
+install_or_upgrade font-jetbrains-mono-nerd-font
+
 # cli tools
 install_or_upgrade wget
 install_or_upgrade htop
@@ -26,14 +31,12 @@ install_or_upgrade python
 install_or_upgrade python3
 
 # development tools
-install_or_upgrade cmake # used for YCM in vim
 install_or_upgrade git
-install_or_upgrade fzf # used for fuzzy finding
+install_or_upgrade fzf
 install_or_upgrade tmux
 install_or_upgrade zsh
-install_or_upgrade git-cola
-install_or_upgrade vim # up-to-date vim
-install_or_upgrade golang
+install_or_upgrade vim
 install_or_upgrade gnupg
 install_or_upgrade sublime-merge
 install_or_upgrade sublime-text
+install_or_upgrade dos2unix

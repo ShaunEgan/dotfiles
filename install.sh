@@ -44,8 +44,6 @@ then
   source install/brew.sh
 fi
 
-source install/fonts.sh
-source install/node.sh
 source install/zsh.sh
 source install/targets.sh
 

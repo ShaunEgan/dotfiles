@@ -1,11 +1,9 @@
 [user]
-  name = Shaun Egan
-  email = shauneganza@gmail.com
+	name = Shaun Egan
+	email = shaun.egan@deimos.co.za
 [alias]
-  co = checkout
   lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  du = !git checkout development && git pull origin development && git fetch --prune
-	pp = pull --prune
+  pp = pull --prune
 [color]
   diff = auto
   status = auto
@@ -29,10 +27,18 @@
   excludesfile = ~/.gitignore
   editor=vim
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf = true
 [apply]
   whitespace = nowarn
-[mergetool]
-  keepBackup = false
+[diff]
+  tool = rider
+[difftool "rider"]
+  cmd = "rider diff $LOCAL $REMOTE"
+[merge]
+  tool = rider
+[mergetool "rider"]
+  cmd = "rider merge $LOCAL $REMOTE $BASE &MERGED"
+  trustExitCode = true
 [difftool]
   prompt = false
 [format]
@@ -43,3 +49,5 @@
   default = current
 [cola]
   spellcheck = false
+[init]
+  defaultBranch = main
