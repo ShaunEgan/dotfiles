@@ -10,6 +10,7 @@ configure your git.
 ```shell
 ./setup.sh
 stow stow -t ~
+./git-setup.sh
 ```
 
 ## Applications
