@@ -1,7 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+ZINIT_HOME="${XDG_DATA_HOME}/zinit/zinit.git"
 
 # Download zinit, f its not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
@@ -38,8 +38,10 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 # History
+mkdir -p "${XDG_DATA_HOME}/zsh"
+
 HISTSIZE=5000
-HISTFILE=~/.zsh_history
+HISTFILE=${XDG_DATA_HOME}/zsh/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory

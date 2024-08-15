@@ -31,3 +31,7 @@ home directory can be found in the [stow](stow) directory.
 
 > [!NOTE]
 > The `stow` command is executed by the wizard
+
+## XDG
+
+The repository tries to keep applications conformant with the XDG directory structures where possible.
