@@ -7,10 +7,14 @@ My personal dotfiles, currently installing a small set of commonly used tools, a
 There is a `wizard.sh` script which will prompt you to execute all steps in the correct order. You can skip any of the 
 steps if required.
 
+```shell
+./wizard.sh
+```
+
 ## Terminal Emulator and Shell
 
-I am using [ITerm2](https://iterm2.com/), `font-jetbrains-mono-nerd-font`, [Zsh](https://www.zsh.org/)
-and [zinit](https://github.com/zdharma-continuum/zinit).
+I am using [ITerm2](https://iterm2.com/), [font-jetbrains-mono-nerd-font](https://www.jetbrains.com/lp/mono/), 
+[Zsh](https://www.zsh.org/) and [zinit](https://github.com/zdharma-continuum/zinit).
 
 ## Applications
 
