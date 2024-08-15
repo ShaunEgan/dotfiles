@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Sets up your global git configuration. These are settings I find to be useful and want turned on by default. The
+## script will also prompt you for your git username and email address.
+
 git config --global init.defaultBranch main
 git config --global core.editor vim
 git config --global push.default current

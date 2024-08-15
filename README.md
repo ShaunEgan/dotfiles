@@ -2,27 +2,28 @@
 
 My personal dotfiles, currently installing a small set of commonly used tools, as well as non-sensitive configuration.
 
-## Quickstart
+## Wizard
 
-The following commands will install the applications, fonts and application dotfiles. Also, they will prompt you to 
-configure your git.
-
-```shell
-./setup.sh
-stow stow -t ~
-./git-setup.sh
-```
-
-## Applications
-
-Applications and fonts are installed using brew. Applications that are already installed will be upgraded to the latest 
-version.
+There is a `wizard.sh` script which will prompt you to execute all steps in the correct order. You can skip any of the 
+steps if required.
 
 ## Terminal Emulator and Shell
 
-I am currently using ITerm2, using the `font-jetbrains-mono-nerd-font`. Currently, I am using zsh, with zinit for 
-plugins.
+I am using [ITerm2](https://iterm2.com/), `font-jetbrains-mono-nerd-font`, [Zsh](https://www.zsh.org/)
+and [zinit](https://github.com/zdharma-continuum/zinit).
 
-## Application configuration
+## Applications
 
-Dotfiles are managed using [GNU Stow](https://www.gnu.org/software/stow/). 
+Applications and fonts are installed using [Homebrew](https://brew.sh/). There is a [brew.sh](scripts/brew.sh) script 
+which uses [brew-packages.txt](scripts/brew-packages.txt) as a list of formulas to install or upgrade. 
+
+> [!NOTE]
+> This script is executed by the wizard
+
+## Application configuration (Dotfiles)
+
+Dotfiles are managed using [GNU Stow](https://www.gnu.org/software/stow/). The dotfiles linked to the current user's 
+home directory can be found in the [stow](stow) directory.  
+
+> [!NOTE]
+> The `stow` command is executed by the wizard

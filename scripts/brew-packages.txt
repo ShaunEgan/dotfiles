@@ -1,0 +1,11 @@
+font-jetbrains-mono-nerd-font
+fzf
+zsh
+tmux
+stow
+git
+python
+python3
+sublime-merge
+sublime-text
+vim
