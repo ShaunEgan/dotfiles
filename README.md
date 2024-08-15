@@ -1,27 +1,27 @@
-# Dotfile
+# Dotfiles
 
-A basic dotfiles repository which sets up my shell environment.
+My personal dotfiles, currently installing a small set of commonly used tools, as well as non-sensitive configuration.
 
-## Installation
+## Quickstart
 
-```sh
-./install.sh
+The following commands will install the applications, fonts and application dotfiles. Also, they will prompt you to 
+configure your git.
+
+```shell
+./setup.sh
+stow stow -t ~
 ```
 
-Then you will need to open vim and run a `:PlugInstall`
+## Applications
 
-You will probably want to use iTerm2, with the font set to SauceCodeProd Nerd Font - Medium - 10
+Applications and fonts are installed using brew. Applications that are already installed will be upgraded to the latest 
+version.
 
-## Extension
+## Terminal Emulator and Shell
 
-Customisation to the general installation process can be done in the `./install` directory. Adding new
-dotfile targets can be done in the `targets` directory.
+I am currently using ITerm2, using the `font-jetbrains-mono-nerd-font`. Currently, I am using zsh, with zinit for 
+plugins.
 
-### Adding symbolically linked files
-Each subdirectory will be inspected as groups of related configuration. All files and directories will be symlinked into 
-the current user's home directory with a dot prefix. Eg
+## Application configuration
 
-```
-./targets/vim/vimrc -> ~/.vimrc
-./targets/vim/vim -> ~/.vim
-```
+Dotfiles are managed using [GNU Stow](https://www.gnu.org/software/stow/). 

@@ -1,0 +1,11 @@
+# Personal platform choices that should not be included in repositories
+
+# All Jetbrains IDEs
+.idea/
+
+# Any swap files or OS specific files
+*.swp
+.DS_Store
+
+# A useful pattern which lets me create test scripts in repos that wont get accidentally committed
+shaun-*
