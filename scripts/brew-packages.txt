@@ -1,11 +1,12 @@
 font-jetbrains-mono-nerd-font
 fzf
-zsh
-tmux
-stow
 git
 python
 python3
+starship
+stow
 sublime-merge
 sublime-text
+tmux
 vim
+zsh
