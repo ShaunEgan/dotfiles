@@ -1,3 +1,5 @@
+awscli
+azure-cli
 font-jetbrains-mono-nerd-font
 fzf
 git
