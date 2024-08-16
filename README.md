@@ -13,7 +13,7 @@ steps if required.
 
 ## Terminal Emulator and Shell
 
-I am using [ITerm2](https://iterm2.com/), [font-jetbrains-mono-nerd-font](https://www.jetbrains.com/lp/mono/), 
+I am using [Alacritty](https://alacritty.org/), [font-jetbrains-mono-nerd-font](https://www.jetbrains.com/lp/mono/), 
 [Zsh](https://www.zsh.org/) and [zinit](https://github.com/zdharma-continuum/zinit).
 
 ## Applications
