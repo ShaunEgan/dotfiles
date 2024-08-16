@@ -1,31 +1,63 @@
-format = """
-[](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
-[](bg:#769ff0 fg:#a3aed2)\
-$directory\
-[](fg:#769ff0 bg:#394260)\
-$git_branch\
-$git_status\
-[ ](fg:#394260)\
+add_newline = true
+command_timeout = 2000
+
+format = """╭╴$os$directory$git_branch$git_status$azure$kubernetes$status
+$character
 """
 
-add_newline = false
+[character]
+success_symbol = "╰⎯"
+error_symbol = "[╰⎯](bold red)"
 
 [os]
-style = "bg:#9A348E"
-disabled = true
+format = '[$symbol](bold white)'
+disabled = false
+
+[os.symbols]
+Windows = ' '
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+Unknown = '󰠥'
+
+[status]
+disabled=false
+format = ' [$symbol $int $common_meaning$signal_name]($style)'
+
+[azure]
+disabled=false
+symbol = '󰠅 '
+format = ' via [$symbol$subscription]($style)'
+
+[kubernetes]
+format = ' via [󱃾 $context\($namespace\)](bold purple)'
+disabled = false
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
-format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = '…/'
+home_symbol = '~'
+read_only = '  '
+format = ' [$path]($style)[$read_only]($read_only_style)'
+style = '#7ed1fb'
 
 [git_branch]
-symbol = ""
-style = "fg:#769ff0 bg:#394260"
-format = '[ $symbol $branch ]($style)'
+symbol = ''
+format = '[ $symbol $branch]($style)'
+style = 'bold green'
 
 [git_status]
-style = "fg:#769ff0 bg:#394260"
-format = '[($all_status$ahead_behind )]($style)'
+disabled = false
+format = '[ $all_status]($style)'
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
