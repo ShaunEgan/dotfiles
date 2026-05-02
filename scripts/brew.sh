@@ -13,10 +13,10 @@ fi
 package_list="brew-packages.txt"
 
 if [[ -f "$package_list" ]]; then
-  while IFS= read -r package || [[ -n "$package" ]]; do
+  while IFS= read -r package <&3 || [[ -n "$package" ]]; do
     echo "Installing or upgrading $package..."
     brew install "$package"
-  done < "$package_list"
+  done 3< "$package_list"
 else
   echo "Package list $package_list not found."
   exit 1
